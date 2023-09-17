@@ -8,3 +8,10 @@ export const registerValidation = [
     body('fullName', 'Укажите Ваше имя').isLength({ min: 2 }),
     body('avatarUrl', 'Неверная ссылка на аватарку').optional().isURL(),
 ]
+
+export const loginValidation = [
+    body('email', 'Неверный формат почты').isEmail(),
+    body('password', 'Пароль должен содеражть минимум 5 символов').isLength({
+        min: 5,
+    }),
+]
